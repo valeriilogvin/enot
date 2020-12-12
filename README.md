@@ -1,4 +1,4 @@
-## **[Gulp](https://gulpjs.com/)** 
+## **Project built with [Gulp](https://gulpjs.com/)** 
 
 > Source-files locate in folder "src"
 >
