@@ -28,8 +28,7 @@ function appendDataCircle(selector, width, stroke, strokeWidth, value)
         circleMainBlock = document.querySelector(`.${selector}`),
         mainCircleSvg = document.createElementNS(svgns, 'svg'),
         mainCircle = document.createElementNS(svgns, 'circle'),
-        mainPath = document.createElementNS(svgns, 'path'),
-        mainText = document.createElementNS(svgns, 'text');
+        mainPath = document.createElementNS(svgns, 'path');
 
     mainCircleSvg.setAttribute('width',vhWidth);
     mainCircleSvg.setAttribute('height', vhWidth);
@@ -50,18 +49,8 @@ function appendDataCircle(selector, width, stroke, strokeWidth, value)
     mainPath.setAttribute('stroke-width', vhStrokeWidth);
     mainPath.setAttribute('d', describeArc(vhRadius, vhRadius, vhPathRadius, value));
 
-    // mainText.setAttribute('x', vhRadius);
-    // mainText.setAttribute('y', vhRadius);
-    // mainText.setAttribute('dominant-baseline', 'middle');
-    // mainText.setAttribute('text-anchor', 'middle');
-    // mainText.setAttribute('fill', '#ffffff');
-    // mainText.setAttribute('font-size', fontSize);
-    // mainText.setAttribute('font-family', fontFamily);
-    // mainText.innerHTML = value + '%';
-
     mainCircleSvg.appendChild(mainCircle);
     mainCircleSvg.appendChild(mainPath);
-    // mainCircleSvg.appendChild(mainText);
 
     circleMainBlock.innerHTML = '';
     circleMainBlock.appendChild(mainCircleSvg);
@@ -110,3 +99,47 @@ function appendDataCircle(selector, width, stroke, strokeWidth, value)
         else return 360 * value / 100;
     }
 }
+
+$('.js_input_text')
+    .focus(function () {
+        $(this).parent().animate({
+            height: '40%'
+        }, 200);
+    })
+    .blur(function () {
+        $(this).parent().animate({
+            height: '80px'
+        }, 200);
+});
+
+$('.js_burger_left_open').on('click', function () {
+    $('.js_burger_left').addClass('active');
+});
+
+$('.js_burger_left_close').on('click', function () {
+    $('.js_burger_left').removeClass('active');
+});
+$('.js_burger_right_open').on('click', function () {
+    $(this).toggleClass('active');
+    $('.js_burger_right').toggleClass('active');
+});
+
+$('.js_burger_right_close').on('click', function () {
+    $('.js_burger_right').removeClass('active');
+});
+
+$('.js_burger_overlay').on('click', function () {
+    $('.js_burger_right_open').removeClass('active');
+    $('.js_burger_left').removeClass('active');
+    $('.js_burger_right').removeClass('active');
+});
+
+$('.js_theme_switcher').on('click', function () {
+    let $wrapper = $('.js_wrapper');
+    let $sliderButton = $('.js_slider_button');
+    if($wrapper.hasClass('light')){
+        $wrapper.removeClass('light');
+    } else {
+        $wrapper.addClass('light');
+    }
+})
