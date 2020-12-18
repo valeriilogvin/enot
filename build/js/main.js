@@ -143,3 +143,13 @@ $('.js_theme_switcher').on('click', function () {
         $wrapper.addClass('light');
     }
 });
+
+// function to fix mobile-browser height
+(function init100vh(){
+    function setHeight() {
+        var vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+    setHeight();
+    window.addEventListener('resize', setHeight);
+})();
