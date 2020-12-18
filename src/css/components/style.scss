@@ -16,120 +16,7 @@
   flex-direction: column;
   justify-content: space-between;
 
-  &.light {
-    background: #F4F4F4;
-
-    .logo-img {
-      fill: #2E3238;
-    }
-
-    .header {
-      .burger-left {
-        span {
-          background: #2E3238;
-        }
-      }
-
-      .burger-right {
-        span {
-          background: #2E3238;
-        }
-
-        &:after,
-        &:before {
-          background: #2E3238;
-        }
-      }
-    }
-
-    .burger-menu-right {
-      background: #F8F8F8;
-
-      ul {
-        border-bottom: 1px solid #D1D1D1;
-
-        li {
-          a {
-            color: #969696;
-          }
-        }
-      }
-    }
-
-    .burger-menu-left {
-      .burger-left {
-        span {
-          background: #969696;
-        }
-      }
-
-      background: #F4F4F4;
-
-      ul {
-        li {
-          a {
-            color: #969696;
-          }
-        }
-      }
-    }
-
-    .amount-block {
-      color: #34383F;
-      border-top: 1px solid #D1D1D1;
-      background: #F8F8F8;
-      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    .input-block {
-      background: linear-gradient(166.51deg, #FCFCFC 8.64%, #F2F2F2 81%);
-      box-shadow: 0 -4px 4px rgba(0, 0, 0, 0.02);
-
-      a {
-        svg {
-          fill: #969696;
-        }
-      }
-
-      textarea {
-        color: #969696;
-        background: #F4F4F4;
-        box-shadow: inset 0px -3px 3px rgba(255, 255, 255, 0.3), inset 0px 4px 4px rgba(0, 0, 0, 0.08);
-      }
-    }
-
-    .theme-switcher {
-      span.slider {
-        .slider-button {
-          left: 0;
-          right: auto;
-        }
-      }
-
-      .slider {
-        background: #D1D1D1;
-
-        .slider-button {
-          background: #D1D1D1;
-          /* Light_theme/dialog */
-
-          border: 0.5px solid #F8F8F8;
-          box-sizing: border-box;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), inset 0px -1px 1px rgba(0, 0, 0, 0.1), inset 0px 1px 1px rgba(240, 240, 240, 0.05);
-        }
-      }
-
-      svg {
-        &.light {
-          fill: #5D6066;
-        }
-
-        &.dark {
-          fill: #D1D1D1;
-        }
-      }
-    }
-  }
+  @import "light";
 
 }
 
@@ -494,6 +381,10 @@ a {
     box-sizing: border-box;
     text-align: right;
 
+    svg{
+      fill:#5D6066;
+    }
+
     + .item {
       margin-top: 10px;
     }
@@ -608,6 +499,11 @@ a {
         text-transform: uppercase;
         margin-right: 30px;
       }
+      svg{
+        path{
+          fill: #F4F4F4;
+        }
+      }
     }
 
     &-input {
@@ -706,6 +602,20 @@ a {
       align-items: center;
       justify-content: flex-start;
 
+      .attention{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #F4F4F4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        svg{
+          path{
+            fill:#2E3238;
+          }
+        }
+      }
       .text {
         font-size: 20px;
         line-height: 25px;
@@ -714,10 +624,14 @@ a {
     }
 
     &-text{
+      display: inline-block;
       margin-top: 6px;
       font-weight: 500;
       font-size: 14px;
       line-height: 17px;
+      span{
+        font-weight: bold;
+      }
     }
   }
 
@@ -808,6 +722,7 @@ a.create-new{
   padding: 10px 0;
   background: #1E2125;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+  margin-bottom: 5px;
   a{
     font-size: 14px;
     line-height: 40px;
@@ -826,6 +741,7 @@ a.create-new{
     background: none;
     svg{
       margin-right: 10px;
+      fill: #5D6066;
     }
   }
 }
@@ -904,7 +820,13 @@ a.create-new{
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%);
+
+  svg{
+    path{
+      fill:#5D6066;
+    }
+  }
 }
 
 .circular-loader {
