@@ -747,25 +747,26 @@ a {
         text-transform: uppercase;
       }
     }
-    a.create-new{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 14px;
-      line-height: 48px;
-      text-transform: uppercase;
-      color: #F4F4F4;
-      padding: 0 48px;
-      background: linear-gradient(0deg, #262A30 0%, #5D6066 100%);
-      border-radius: 15px;
-      width: max-content;
-      margin: 0 auto 24px;
-      svg{
-        margin-right: 20px;
-      }
-    }
+  }
+}
+
+a.create-new{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 48px;
+  text-transform: uppercase;
+  color: #F4F4F4;
+  padding: 0 48px;
+  background: linear-gradient(0deg, #262A30 0%, #5D6066 100%);
+  border-radius: 15px;
+  width: max-content;
+  margin: 0 auto 24px;
+  svg{
+    margin-right: 20px;
   }
 }
 
@@ -794,6 +795,34 @@ a {
     margin: 90px auto 80px;
     svg{
       margin-right: 20px;
+    }
+  }
+}
+
+.open-buttons{
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  background: #1E2125;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+  a{
+    font-size: 14px;
+    line-height: 40px;
+    text-transform: uppercase;
+    color: #5D6066;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    text-decoration: none;
+    width: calc(50% - 20px);
+    margin: 0 10px;
+    border: 1px solid #34383F;
+    box-sizing: border-box;
+    border-radius: 15px;
+    background: none;
+    svg{
+      margin-right: 10px;
     }
   }
 }
@@ -832,6 +861,24 @@ a {
     line-height: 18px;
     color: #5D6066;
     font-style: italic;
+  }
+}
+
+.create-new-block {
+  background: #1E2125;
+  box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
+
+  .text{
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    color: #5D6066;
+    width: 340px;
+    margin: 10px auto 0;
+
+  }
+  a.create-new {
+    margin: 9px auto 13px;
   }
 }
 
