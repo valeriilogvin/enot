@@ -769,6 +769,35 @@ a {
   }
 }
 
+.watch {
+  &-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: auto;
+    padding: 0 10px;
+  }
+  &-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 48px;
+    text-transform: uppercase;
+    color: #F4F4F4;
+    padding: 0 32px;
+    background: linear-gradient(0deg, #262A30 0%, #5D6066 100%);
+    border-radius: 15px;
+    width: max-content;
+    margin: 90px auto 80px;
+    svg{
+      margin-right: 20px;
+    }
+  }
+}
+
 .input-block {
   padding: 10px;
   background: #262A30;
