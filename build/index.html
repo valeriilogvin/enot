@@ -12,218 +12,218 @@
 </head>
 <body >
 
-    <div class="wrapper js_wrapper light">
+    <div class="wrapper js_wrapper ">
 
         <!-- preloader -->
-        <style type="text/css">
-            .preloader {
-                position: fixed;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100vh;
-                background: linear-gradient(0deg, #1F2226 0%, #35383E 100%);
-                z-index: 99999;
-                transition: .5s all;
-                opacity: 1;
-                visibility: visible;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: space-between;
-            }
+        <!--<style type="text/css">-->
+            <!--.preloader {-->
+                <!--position: fixed;-->
+                <!--left: 0;-->
+                <!--top: 0;-->
+                <!--width: 100%;-->
+                <!--height: 100vh;-->
+                <!--background: linear-gradient(0deg, #1F2226 0%, #35383E 100%);-->
+                <!--z-index: 99999;-->
+                <!--transition: .5s all;-->
+                <!--opacity: 1;-->
+                <!--visibility: visible;-->
+                <!--display: flex;-->
+                <!--flex-direction: column;-->
+                <!--align-items: center;-->
+                <!--justify-content: space-between;-->
+            <!--}-->
 
-            .wrapper.light .preloader{
-                background: linear-gradient(166.51deg, #FCFCFC 8.64%, #F2F2F2 81%);
-            }
+            <!--.wrapper.light .preloader{-->
+                <!--background: linear-gradient(166.51deg, #FCFCFC 8.64%, #F2F2F2 81%);-->
+            <!--}-->
 
-            .preloader.done{
-                opacity: 0;
-                visibility: hidden;
-            }
-            .preloader .logo{
-                margin-top: 140px;
-                position: relative;
-            }
-            .preloader .logo-svg {
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translateX(-50%) translateY(-50%);
-                fill: #D1D1D1;
-            }
-            .wrapper.light .preloader .logo-svg{
-                fill: #5D6066;
-                filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
-            }
+            <!--.preloader.done{-->
+                <!--opacity: 0;-->
+                <!--visibility: hidden;-->
+            <!--}-->
+            <!--.preloader .logo{-->
+                <!--margin-top: 140px;-->
+                <!--position: relative;-->
+            <!--}-->
+            <!--.preloader .logo-svg {-->
+                <!--position: absolute;-->
+                <!--left: 50%;-->
+                <!--top: 50%;-->
+                <!--transform: translateX(-50%) translateY(-50%);-->
+                <!--fill: #D1D1D1;-->
+            <!--}-->
+            <!--.wrapper.light .preloader .logo-svg{-->
+                <!--fill: #5D6066;-->
+                <!--filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));-->
+            <!--}-->
 
-            .preloader .title {
-                margin-bottom: 140px;
-                text-align: center;
-                font-family: 'Source Sans Pro', sans-serif;
-                font-weight: 600;
-                font-size: 16px;
-                line-height: 20px;
-                text-transform: uppercase;
-                color: #F4F4F4;
-            }
-            .wrapper.light .preloader .title {
-                color: #5D6066;
-            }
-            .preloader .title span {
-                font-size: 30px;
-                line-height: 38px;
-                padding-right: 15px;
-            }
-            .preloader .title p + p{
-                padding-top: 25px;
-            }
-        </style>
+            <!--.preloader .title {-->
+                <!--margin-bottom: 140px;-->
+                <!--text-align: center;-->
+                <!--font-family: 'Source Sans Pro', sans-serif;-->
+                <!--font-weight: 600;-->
+                <!--font-size: 16px;-->
+                <!--line-height: 20px;-->
+                <!--text-transform: uppercase;-->
+                <!--color: #F4F4F4;-->
+            <!--}-->
+            <!--.wrapper.light .preloader .title {-->
+                <!--color: #5D6066;-->
+            <!--}-->
+            <!--.preloader .title span {-->
+                <!--font-size: 30px;-->
+                <!--line-height: 38px;-->
+                <!--padding-right: 15px;-->
+            <!--}-->
+            <!--.preloader .title p + p{-->
+                <!--padding-top: 25px;-->
+            <!--}-->
+        <!--</style>-->
 
-        <div id="page-preloader" class="preloader">
-            <div class="logo"></div>
-            <div class="title">
-                <p>Вы можете отправить еще</p>
-                <p><span>5</span>записок</p>
-            </div>
-        </div>
+        <!--<div id="page-preloader" class="preloader">-->
+            <!--<div class="logo"></div>-->
+            <!--<div class="title">-->
+                <!--<p>Вы можете отправить еще</p>-->
+                <!--<p><span>5</span>записок</p>-->
+            <!--</div>-->
+        <!--</div>-->
 
-        <script type="text/javascript">
-            let i = 0,
-                circleWidth = 200,
-                strokeWidth = 10,
-                strokeBgWidth = '8',
-                strokeColor = '#5D6066',
-                logoLoadingSpeed = 30,
-                radius = circleWidth/2,
-                pathRadius = circleWidth/2 - strokeWidth/2;
+        <!--<script type="text/javascript">-->
+            <!--let i = 0,-->
+                <!--circleWidth = 200,-->
+                <!--strokeWidth = 10,-->
+                <!--strokeBgWidth = '8',-->
+                <!--strokeColor = '#5D6066',-->
+                <!--logoLoadingSpeed = 30,-->
+                <!--radius = circleWidth/2,-->
+                <!--pathRadius = circleWidth/2 - strokeWidth/2;-->
 
-            let svgns = 'http://www.w3.org/2000/svg',
+            <!--let svgns = 'http://www.w3.org/2000/svg',-->
 
-                circleMainBlock = document.querySelector('.logo'),
-                mainCircleSvg = document.createElementNS(svgns, 'svg'),
-                mainLogoSvg = document.createElementNS(svgns, 'svg'),
-                mainCircle = document.createElementNS(svgns, 'circle'),
-                mainPath = document.createElementNS(svgns, 'path'),
-                mainLogo = document.createElementNS(svgns, 'path');
+                <!--circleMainBlock = document.querySelector('.logo'),-->
+                <!--mainCircleSvg = document.createElementNS(svgns, 'svg'),-->
+                <!--mainLogoSvg = document.createElementNS(svgns, 'svg'),-->
+                <!--mainCircle = document.createElementNS(svgns, 'circle'),-->
+                <!--mainPath = document.createElementNS(svgns, 'path'),-->
+                <!--mainLogo = document.createElementNS(svgns, 'path');-->
 
-            mainCircleSvg.setAttribute('class', 'circle_svg');
-            mainCircleSvg.setAttribute('width', circleWidth);
-            mainCircleSvg.setAttribute('height', circleWidth);
+            <!--mainCircleSvg.setAttribute('class', 'circle_svg');-->
+            <!--mainCircleSvg.setAttribute('width', circleWidth);-->
+            <!--mainCircleSvg.setAttribute('height', circleWidth);-->
 
 
-            mainCircle.setAttribute('width', circleWidth);
-            mainCircle.setAttribute('height', circleWidth);
-            mainCircle.setAttribute('fill', 'none');
-            mainCircle.setAttribute('opacity', '.08');
-            mainCircle.setAttribute('stroke', strokeColor);
-            mainCircle.setAttribute('stroke-width', strokeBgWidth);
-            mainCircle.setAttribute('r', pathRadius);
-            mainCircle.setAttribute('cx', radius);
-            mainCircle.setAttribute('cy', radius);
+            <!--mainCircle.setAttribute('width', circleWidth);-->
+            <!--mainCircle.setAttribute('height', circleWidth);-->
+            <!--mainCircle.setAttribute('fill', 'none');-->
+            <!--mainCircle.setAttribute('opacity', '.08');-->
+            <!--mainCircle.setAttribute('stroke', strokeColor);-->
+            <!--mainCircle.setAttribute('stroke-width', strokeBgWidth);-->
+            <!--mainCircle.setAttribute('r', pathRadius);-->
+            <!--mainCircle.setAttribute('cx', radius);-->
+            <!--mainCircle.setAttribute('cy', radius);-->
 
-            mainPath.setAttribute('class', `logo__path`);
-            mainPath.setAttribute('fill', 'none');
-            mainPath.setAttribute('filter', 'url(#filter0_i)');
-            mainPath.setAttribute('stroke-linecap', 'round');
-            mainPath.setAttribute('stroke', strokeColor);
-            mainPath.setAttribute('stroke-width', strokeWidth);
-            mainPath.setAttribute('d', describeArc(radius, radius, pathRadius, 0));
+            <!--mainPath.setAttribute('class', `logo__path`);-->
+            <!--mainPath.setAttribute('fill', 'none');-->
+            <!--mainPath.setAttribute('filter', 'url(#filter0_i)');-->
+            <!--mainPath.setAttribute('stroke-linecap', 'round');-->
+            <!--mainPath.setAttribute('stroke', strokeColor);-->
+            <!--mainPath.setAttribute('stroke-width', strokeWidth);-->
+            <!--mainPath.setAttribute('d', describeArc(radius, radius, pathRadius, 0));-->
 
-            mainLogoSvg.setAttribute('width', '85');
-            mainLogoSvg.setAttribute('height', '70');
-            mainLogoSvg.setAttribute('class', 'logo-svg');
+            <!--mainLogoSvg.setAttribute('width', '85');-->
+            <!--mainLogoSvg.setAttribute('height', '70');-->
+            <!--mainLogoSvg.setAttribute('class', 'logo-svg');-->
 
-            mainLogo.setAttribute('d', 'M4.01196 26.0504L28.7748 8.10079L4.94576 0.25L4.01196 26.0504ZM55.4052 8.10079L80.168 26.0504L79.1997 0.25L55.4052 8.10079ZM45.1681 13.4615L53.1572 8.10078H30.9883L38.9774 13.4615L42.09 31.8607L45.1681 13.4615ZM55.4051 23.2144L43.3004 39.7115L64.9506 55.586L49.1107 62.1917V56.1047H35V62.2263L19.1255 55.586L40.8794 39.6423L28.7747 23.1453L0 44.2075L12.1047 60.7045L35 70.25H49.1107H49.1453L71.9714 60.7045L84.0761 44.2075L55.4051 23.2144ZM50.7707 37.5326L56.4427 31.8607L62.1146 37.5326H50.7707ZM27.7372 31.8607L33.4091 37.5326H22.0998L27.7372 31.8607Z');
-            mainLogo.setAttribute('fill-rule', 'evenodd');
-            mainLogo.setAttribute('cx', radius);
-            mainLogo.setAttribute('cy', radius);
+            <!--mainLogo.setAttribute('d', 'M4.01196 26.0504L28.7748 8.10079L4.94576 0.25L4.01196 26.0504ZM55.4052 8.10079L80.168 26.0504L79.1997 0.25L55.4052 8.10079ZM45.1681 13.4615L53.1572 8.10078H30.9883L38.9774 13.4615L42.09 31.8607L45.1681 13.4615ZM55.4051 23.2144L43.3004 39.7115L64.9506 55.586L49.1107 62.1917V56.1047H35V62.2263L19.1255 55.586L40.8794 39.6423L28.7747 23.1453L0 44.2075L12.1047 60.7045L35 70.25H49.1107H49.1453L71.9714 60.7045L84.0761 44.2075L55.4051 23.2144ZM50.7707 37.5326L56.4427 31.8607L62.1146 37.5326H50.7707ZM27.7372 31.8607L33.4091 37.5326H22.0998L27.7372 31.8607Z');-->
+            <!--mainLogo.setAttribute('fill-rule', 'evenodd');-->
+            <!--mainLogo.setAttribute('cx', radius);-->
+            <!--mainLogo.setAttribute('cy', radius);-->
 
-            mainLogoSvg.appendChild(mainLogo);
+            <!--mainLogoSvg.appendChild(mainLogo);-->
 
-            mainCircleSvg.appendChild(mainCircle);
-            mainCircleSvg.appendChild(mainPath);
+            <!--mainCircleSvg.appendChild(mainCircle);-->
+            <!--mainCircleSvg.appendChild(mainPath);-->
 
-            circleMainBlock.innerHTML = '';
-            circleMainBlock.appendChild(mainCircleSvg);
-            circleMainBlock.appendChild(mainLogoSvg);
-            document.querySelector('.circle_svg').insertAdjacentHTML('beforeend', `
-                <defs>
-                    <filter id="filter0_i" x="0" y="-1" width="210" height="210" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                        <feOffset dy="-4"/>
-                        <feGaussianBlur stdDeviation="0.5"/>
-                        <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-                        <feBlend mode="normal" in2="shape" result="effect1_innerShadow"/>
-                    </filter>
-                </defs>
-            `);
+            <!--circleMainBlock.innerHTML = '';-->
+            <!--circleMainBlock.appendChild(mainCircleSvg);-->
+            <!--circleMainBlock.appendChild(mainLogoSvg);-->
+            <!--document.querySelector('.circle_svg').insertAdjacentHTML('beforeend', `-->
+                <!--<defs>-->
+                    <!--<filter id="filter0_i" x="0" y="-1" width="210" height="210" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">-->
+                        <!--<feFlood flood-opacity="0" result="BackgroundImageFix"/>-->
+                        <!--<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>-->
+                        <!--<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>-->
+                        <!--<feOffset dy="-4"/>-->
+                        <!--<feGaussianBlur stdDeviation="0.5"/>-->
+                        <!--<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>-->
+                        <!--<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>-->
+                        <!--<feBlend mode="normal" in2="shape" result="effect1_innerShadow"/>-->
+                    <!--</filter>-->
+                <!--</defs>-->
+            <!--`);-->
 
-            function polarToCartesian(centerX, centerY, radius, angleInDegrees) {
-                var angleInRadians = (angleInDegrees-90) * Math.PI / 180.0;
+            <!--function polarToCartesian(centerX, centerY, radius, angleInDegrees) {-->
+                <!--var angleInRadians = (angleInDegrees-90) * Math.PI / 180.0;-->
 
-                return {
-                    x: centerX + (radius * Math.cos(angleInRadians)),
-                    y: centerY + (radius * Math.sin(angleInRadians))
-                };
-            }
+                <!--return {-->
+                    <!--x: centerX + (radius * Math.cos(angleInRadians)),-->
+                    <!--y: centerY + (radius * Math.sin(angleInRadians))-->
+                <!--};-->
+            <!--}-->
 
-            function describeArc(x, y, radius, value){
+            <!--function describeArc(x, y, radius, value){-->
 
-                let endAngle = calculatePercent(value);
+                <!--let endAngle = calculatePercent(value);-->
 
-                var endAngleOriginal = endAngle;
-                if(endAngleOriginal - 0 === 360){
-                    endAngle = 359;
-                }
+                <!--var endAngleOriginal = endAngle;-->
+                <!--if(endAngleOriginal - 0 === 360){-->
+                    <!--endAngle = 359;-->
+                <!--}-->
 
-                var start = polarToCartesian(x, y, radius, endAngle);
-                var end = polarToCartesian(x, y, radius, 0);
+                <!--var start = polarToCartesian(x, y, radius, endAngle);-->
+                <!--var end = polarToCartesian(x, y, radius, 0);-->
 
-                var arcSweep = endAngle - 0 <= 180 ? '0' : '1';
+                <!--var arcSweep = endAngle - 0 <= 180 ? '0' : '1';-->
 
-                if(endAngleOriginal - 0 === 360){
-                    var d = [
-                        'M', start.x, start.y,
-                        'A', radius, radius, 0, arcSweep, 0, end.x, end.y, 'z'
-                    ].join(' ');
-                }
-                else{
-                    var d = [
-                        'M', start.x, start.y,
-                        'A', radius, radius, 0, arcSweep, 0, end.x, end.y
-                    ].join(' ');
-                }
+                <!--if(endAngleOriginal - 0 === 360){-->
+                    <!--var d = [-->
+                        <!--'M', start.x, start.y,-->
+                        <!--'A', radius, radius, 0, arcSweep, 0, end.x, end.y, 'z'-->
+                    <!--].join(' ');-->
+                <!--}-->
+                <!--else{-->
+                    <!--var d = [-->
+                        <!--'M', start.x, start.y,-->
+                        <!--'A', radius, radius, 0, arcSweep, 0, end.x, end.y-->
+                    <!--].join(' ');-->
+                <!--}-->
 
-                return d;
-            }
+                <!--return d;-->
+            <!--}-->
 
-            function calculatePercent(value) {
-                if (value > 100) return 360;
-                else return 360 * value / 100;
-            }
+            <!--function calculatePercent(value) {-->
+                <!--if (value > 100) return 360;-->
+                <!--else return 360 * value / 100;-->
+            <!--}-->
 
-            document.body.onload = function() {
-                setTimeout(function(){
-                    var preloader = document.getElementById('page-preloader');
-                    if(!preloader.classList.contains('done'))
-                    {
-                        preloader.classList.add('done');
-                    }
-                }, 3000);
-            };
+            <!--document.body.onload = function() {-->
+                <!--setTimeout(function(){-->
+                    <!--var preloader = document.getElementById('page-preloader');-->
+                    <!--if(!preloader.classList.contains('done'))-->
+                    <!--{-->
+                        <!--preloader.classList.add('done');-->
+                    <!--}-->
+                <!--}, 3000);-->
+            <!--};-->
 
-            setInterval(()=>{
-                i++;
-                if(i < 101){
-                    document.querySelector('.logo__path').setAttribute('d', describeArc(100, 100, 95, i));
-                }
-            }, logoLoadingSpeed);
+            <!--setInterval(()=>{-->
+                <!--i++;-->
+                <!--if(i < 101){-->
+                    <!--document.querySelector('.logo__path').setAttribute('d', describeArc(100, 100, 95, i));-->
+                <!--}-->
+            <!--}, logoLoadingSpeed);-->
 
-        </script>
+        <!--</script>-->
         <!-- /preloader -->
 
         <!-- burger-menu -->
@@ -281,14 +281,283 @@
                 <span></span>
                 <span></span>
             </div>
+            <a href="#" class="public">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M18.393 0C15.8286 0 13.7426 2.08587 13.7426 4.65019C13.7426 5.13661 13.8183 5.60569 13.9576 6.04681L8.92045 8.90758C8.06864 7.95282 6.82906 7.34997 5.45101 7.34997C2.88631 7.34997 0.799988 9.43581 0.799988 12.0003C0.799988 14.5646 2.88632 16.6505 5.45101 16.6505C6.82907 16.6505 8.06856 16.0476 8.92035 15.0929L13.9576 17.953C13.8183 18.3941 13.7425 18.8633 13.7425 19.3498C13.7425 21.9141 15.8285 24 18.3929 24C20.9571 24 23.0428 21.914 23.0428 19.3498C23.0429 16.7851 20.9572 14.6987 18.393 14.6987C17.0147 14.6987 15.775 15.3018 14.9231 16.2567L9.88577 13.3968C10.025 12.9558 10.1008 12.4868 10.1008 12.0004C10.1008 11.514 10.025 11.045 9.88577 10.6041L14.9226 7.74341C15.7745 8.69868 17.0143 9.30194 18.3928 9.30194C20.957 9.30194 23.0427 7.21537 23.0427 4.65031C23.0429 2.08589 20.9571 0 18.393 0ZM15.6945 4.65019C15.6945 3.1625 16.9052 1.95187 18.393 1.95187C19.8805 1.95187 21.091 3.16247 21.091 4.65019C21.091 6.13884 19.8804 7.34997 18.393 7.34997C16.9053 7.34997 15.6945 6.1388 15.6945 4.65019ZM2.75196 12.0004C2.75196 10.5126 3.96294 9.30194 5.45111 9.30194C6.93858 9.30194 8.14902 10.5125 8.14902 12.0004C8.14902 13.488 6.93848 14.6987 5.45111 14.6987C3.96294 14.6987 2.75196 13.4879 2.75196 12.0004ZM15.6945 19.3499C15.6945 17.8616 16.9053 16.6506 18.393 16.6506C19.8804 16.6506 21.091 17.8616 21.091 19.3499C21.091 20.8375 19.8805 22.0482 18.393 22.0482C16.9052 22.0482 15.6945 20.8375 15.6945 19.3499Z" fill="#F4F4F4"/>
+                </svg>
+                ОПУБЛИКОВАТЬ ЗАПИСКУ
+            </a>
         </div>
 
         <div class="amount-block">
             Вы можете отправить еще <span>5</span> записок
         </div>
 
-        <div class="content">
+        <div class="content-wrap scroll-hide js_content_wrap">
+            <div class="content">
+                <div class="item img">
+                    <div class="img-block">
+                        <div>
+                            <img src="img/img1.png" alt="">
+                            <p class="name">Image.jpg</p>
+                        </div>
+                        <div class="indicators">
+                            <div class="loader ">
+                                <svg class="circular-loader" viewBox="25 25 50 50">
+                                    <circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-dasharray="150, 200" stroke-dashoffset="-10"></circle>
+                                </svg>
+                                <svg class="circular" viewBox="25 25 50 50">
+                                    <circle cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-dasharray="150, 200"></circle>
+                                </svg>
+                                <div class="loader__icon">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.5573 0.187402C9.97542 -0.174185 9.20972 0.00311595 8.84744 0.58459L3.91144 8.51095L2.25793 6.1545C1.86469 5.5938 1.08973 5.45806 0.528644 5.85108C-0.0323252 6.2446 -0.168661 7.0179 0.225074 7.5791L2.95655 11.4718C3.18946 11.8032 3.56907 12 3.97302 12C3.98416 12 3.99584 12 4.00701 11.9995C4.4235 11.9878 4.80672 11.7685 5.02674 11.415L10.955 1.89599C11.3177 1.31387 11.1392 0.549224 10.5573 0.187402Z" fill="#5D6066"></path>
+                                    </svg>
 
+                                </div>
+                            </div>
+                            <div class="loader">
+                                <svg class="circular-loader" viewBox="25 25 50 50">
+                                    <circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-dasharray="150, 200" stroke-dashoffset="-10"></circle>
+                                </svg>
+                                <svg class="circular" viewBox="25 25 50 50">
+                                    <circle cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-dasharray="150, 200"></circle>
+                                </svg>
+                                <div class="loader__icon">
+                                    <svg width="10" height="13" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8.65796 5.29537V4.09863C8.65796 2.13553 7.061 0.538574 5.09817 0.538574C3.13507 0.538574 1.53824 2.13553 1.53824 4.09863V5.29537H0.384766V12.5386H9.8113V5.29537H8.65796ZM3.01643 4.09863C3.01643 2.95066 3.95033 2.01676 5.09817 2.01676C6.246 2.01676 7.1799 2.95066 7.1799 4.09863V5.29537H3.01643V4.09863ZM5.69044 9.85277V11.4541H4.50576V9.85277C4.23021 9.66387 4.0493 9.34715 4.0493 8.98756C4.0493 8.4084 4.51887 7.93883 5.09804 7.93883C5.6772 7.93883 6.14677 8.4084 6.14677 8.98756C6.1469 9.34702 5.96599 9.66373 5.69044 9.85277Z" fill="#5D6066"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item document">
+                    <div class="text-block">
+                        <p class="name clip">Очень длинное название Очень длинное название </p>
+                        <p class="format">Формат: <span>zip</span></p>
+                        <p class="size">Размер: <span>256 Кб</span></p>
+                    </div>
+                    <svg width="55" height="55" viewBox="0 0 42 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M25.1367 12.3535C25.1367 14.4267 26.8233 16.1133 28.8965 16.1133H41.8945V49.0918C41.8945 52.3496 39.2441 55 35.9863 55H5.9082C2.65042 55 0 52.3496 0 49.0918V5.9082C0 2.65042 2.65042 0 5.9082 0H25.1367V12.3535ZM16.6203 38.6719H8.80859C7.91871 38.6719 7.19727 39.3933 7.19727 40.2832C7.19727 41.1731 7.91871 41.8945 8.80859 41.8945H16.6203C17.5102 41.8945 18.2316 41.1731 18.2316 40.2832C18.2316 39.3933 17.5102 38.6719 16.6203 38.6719ZM8.80859 30.0781C7.91871 30.0781 7.19727 30.7996 7.19727 31.6895C7.19727 32.5793 7.91871 33.3008 8.80859 33.3008H32.4414C33.3313 33.3008 34.0527 32.5793 34.0527 31.6895C34.0527 30.7996 33.3313 30.0781 32.4414 30.0781H8.80859ZM34.0527 23.0957C34.0527 22.2058 33.3313 21.4844 32.4414 21.4844H8.80859C7.91871 21.4844 7.19727 22.2058 7.19727 23.0957C7.19727 23.9856 7.91871 24.707 8.80859 24.707H32.4414C33.3313 24.707 34.0527 23.9856 34.0527 23.0957ZM28.8965 12.8908C28.6003 12.8908 28.3594 12.6498 28.3594 12.3536H28.3595V0.668404C28.8391 0.918911 29.2869 1.23613 29.6888 1.6164L40.0468 11.4156C40.5023 11.8467 40.8815 12.3466 41.1763 12.8908H28.8965Z" fill="#5D6066"/>
+                    </svg>
+                    <div class="indicators">
+                        <div class="loader ">
+                            <svg class="circular-loader" viewBox="25 25 50 50">
+                                <circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-dasharray="150, 200" stroke-dashoffset="-10"></circle>
+                            </svg>
+                            <svg class="circular" viewBox="25 25 50 50">
+                                <circle cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-dasharray="150, 200"></circle>
+                            </svg>
+                            <div class="loader__icon">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.5573 0.187402C9.97542 -0.174185 9.20972 0.00311595 8.84744 0.58459L3.91144 8.51095L2.25793 6.1545C1.86469 5.5938 1.08973 5.45806 0.528644 5.85108C-0.0323252 6.2446 -0.168661 7.0179 0.225074 7.5791L2.95655 11.4718C3.18946 11.8032 3.56907 12 3.97302 12C3.98416 12 3.99584 12 4.00701 11.9995C4.4235 11.9878 4.80672 11.7685 5.02674 11.415L10.955 1.89599C11.3177 1.31387 11.1392 0.549224 10.5573 0.187402Z" fill="#5D6066"></path>
+                                </svg>
+
+                            </div>
+                        </div>
+                        <div class="loader">
+                            <svg class="circular-loader" viewBox="25 25 50 50">
+                                <circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-dasharray="150, 200" stroke-dashoffset="-10"></circle>
+                            </svg>
+                            <svg class="circular" viewBox="25 25 50 50">
+                                <circle cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-dasharray="150, 200"></circle>
+                            </svg>
+                            <div class="loader__icon">
+                                <svg width="10" height="13" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.65796 5.29537V4.09863C8.65796 2.13553 7.061 0.538574 5.09817 0.538574C3.13507 0.538574 1.53824 2.13553 1.53824 4.09863V5.29537H0.384766V12.5386H9.8113V5.29537H8.65796ZM3.01643 4.09863C3.01643 2.95066 3.95033 2.01676 5.09817 2.01676C6.246 2.01676 7.1799 2.95066 7.1799 4.09863V5.29537H3.01643V4.09863ZM5.69044 9.85277V11.4541H4.50576V9.85277C4.23021 9.66387 4.0493 9.34715 4.0493 8.98756C4.0493 8.4084 4.51887 7.93883 5.09804 7.93883C5.6772 7.93883 6.14677 8.4084 6.14677 8.98756C6.1469 9.34702 5.96599 9.66373 5.69044 9.85277Z" fill="#5D6066"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item archive">
+                    <div class="text-block">
+                        <p class="name clip">Название архива Название архива Название архива Название архива</p>
+                        <p class="format">Формат: <span>zip</span></p>
+                        <p class="size">Размер: <span>256 Кб</span></p>
+                    </div>
+                    <svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 41.3397L3 52.1216C3 53.7087 4.29106 55 5.87842 55L48.5377 55C50.1248 55 51.4162 53.7087 51.4162 52.1216V41.3397C51.4162 39.7523 50.1248 38.4613 48.5377 38.4613L5.87842 38.4613C4.29106 38.461 3 39.7523 3 41.3397ZM45.0774 43.458V50.1634C45.0774 50.9369 44.4503 51.5637 43.6771 51.5637C42.9038 51.5637 42.2768 50.9369 42.2768 50.1634V43.458C42.2768 42.6845 42.9038 42.0578 43.6771 42.0578C44.4503 42.0578 45.0774 42.6845 45.0774 43.458ZM25.5678 43.458V50.1634C25.5678 50.9369 24.9407 51.5637 24.1675 51.5637C23.3943 51.5637 22.7672 50.9369 22.7672 50.1634L22.7672 43.458C22.7672 42.6845 23.3943 42.0578 24.1675 42.0578C24.9407 42.0578 25.5678 42.6845 25.5678 43.458ZM19.9566 43.458V50.1634C19.9566 50.9369 19.3295 51.5637 18.5563 51.5637C17.7831 51.5637 17.156 50.9369 17.156 50.1634V43.458C17.156 42.6845 17.7831 42.0578 18.5563 42.0578C19.3295 42.0578 19.9566 42.6845 19.9566 43.458ZM14.3451 43.458V50.1634C14.3451 50.9369 13.718 51.5637 12.9448 51.5637C12.1716 51.5637 11.5445 50.9369 11.5445 50.1634L11.5445 43.458C11.5445 42.6845 12.1716 42.0578 12.9448 42.0578C13.718 42.0578 14.3451 42.6845 14.3451 43.458ZM3 22.1091L3 32.8909C3 34.4783 4.29134 35.7694 5.87842 35.7694L48.5377 35.7694C50.1248 35.7694 51.4162 34.4783 51.4162 32.8909V22.1091C51.4162 20.522 50.1248 19.2306 48.5377 19.2306L5.87842 19.2306C4.29106 19.2304 3 20.522 3 22.1091ZM45.0774 24.2274V30.9328C45.0774 31.7063 44.4503 32.3331 43.6771 32.3331C42.9038 32.3331 42.2768 31.7063 42.2768 30.9328V24.2274C42.2768 23.4539 42.9038 22.8271 43.6771 22.8271C44.4503 22.8271 45.0774 23.4539 45.0774 24.2274ZM25.5678 24.2274V30.9328C25.5678 31.7063 24.9407 32.3331 24.1675 32.3331C23.3943 32.3331 22.7672 31.7063 22.7672 30.9328V24.2274C22.7672 23.4539 23.3943 22.8271 24.1675 22.8271C24.9407 22.8271 25.5678 23.4539 25.5678 24.2274ZM19.9566 24.2274V30.9328C19.9566 31.7063 19.3295 32.3331 18.5563 32.3331C17.7831 32.3331 17.156 31.7063 17.156 30.9328V24.2274C17.156 23.4539 17.7831 22.8271 18.5563 22.8271C19.3295 22.8271 19.9566 23.4539 19.9566 24.2274ZM14.3451 24.2274V30.9328C14.3451 31.7063 13.718 32.3331 12.9448 32.3331C12.1716 32.3331 11.5445 31.7063 11.5445 30.9328L11.5445 24.2274C11.5445 23.4539 12.1716 22.8271 12.9448 22.8271C13.718 22.8271 14.3451 23.4539 14.3451 24.2274ZM3 2.87843L3 13.6603C3 15.2474 4.29134 16.5387 5.87842 16.5387L48.5377 16.5387C50.1248 16.5387 51.4162 15.2474 51.4162 13.6603V2.87842C51.4162 1.29106 50.1248 -6.93732e-08 48.5377 0L5.87842 1.8647e-06C4.29106 -0.000278122 3 1.29107 3 2.87843ZM45.0774 4.99705V11.7022C45.0774 12.4757 44.4503 13.1024 43.6771 13.1024C42.9038 13.1024 42.2768 12.4757 42.2768 11.7022V4.99705C42.2768 4.22353 42.9038 3.59677 43.6771 3.59677C44.4503 3.59677 45.0774 4.22353 45.0774 4.99705ZM25.5678 4.99705V11.7022C25.5678 12.4757 24.9407 13.1024 24.1675 13.1024C23.3943 13.1024 22.7672 12.4757 22.7672 11.7022V4.99705C22.7672 4.22353 23.3943 3.59677 24.1675 3.59677C24.9407 3.59677 25.5678 4.22353 25.5678 4.99705ZM19.9566 4.99705L19.9566 11.7022C19.9566 12.4757 19.3295 13.1024 18.5563 13.1024C17.7831 13.1024 17.156 12.4757 17.156 11.7022V4.99705C17.156 4.22353 17.7831 3.59677 18.5563 3.59677C19.3295 3.59677 19.9566 4.22353 19.9566 4.99705ZM14.3451 4.99705L14.3451 11.7022C14.3451 12.4757 13.718 13.1024 12.9448 13.1024C12.1716 13.1024 11.5445 12.4757 11.5445 11.7022V4.99705C11.5445 4.22353 12.1716 3.59677 12.9448 3.59677C13.718 3.59677 14.3451 4.22353 14.3451 4.99705Z" fill="#5D6066"/>
+                    </svg>
+                    <div class="indicators">
+                        <div class="loader ">
+                            <svg class="circular-loader" viewBox="25 25 50 50">
+                                <circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-dasharray="150, 200" stroke-dashoffset="-10"></circle>
+                            </svg>
+                            <svg class="circular" viewBox="25 25 50 50">
+                                <circle cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-dasharray="150, 200"></circle>
+                            </svg>
+                            <div class="loader__icon">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.5573 0.187402C9.97542 -0.174185 9.20972 0.00311595 8.84744 0.58459L3.91144 8.51095L2.25793 6.1545C1.86469 5.5938 1.08973 5.45806 0.528644 5.85108C-0.0323252 6.2446 -0.168661 7.0179 0.225074 7.5791L2.95655 11.4718C3.18946 11.8032 3.56907 12 3.97302 12C3.98416 12 3.99584 12 4.00701 11.9995C4.4235 11.9878 4.80672 11.7685 5.02674 11.415L10.955 1.89599C11.3177 1.31387 11.1392 0.549224 10.5573 0.187402Z" fill="#5D6066"></path>
+                                </svg>
+
+                            </div>
+                        </div>
+                        <div class="loader">
+                            <svg class="circular-loader" viewBox="25 25 50 50">
+                                <circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-dasharray="150, 200" stroke-dashoffset="-10"></circle>
+                            </svg>
+                            <svg class="circular" viewBox="25 25 50 50">
+                                <circle cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-dasharray="150, 200"></circle>
+                            </svg>
+                            <div class="loader__icon">
+                                <svg width="10" height="13" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.65796 5.29537V4.09863C8.65796 2.13553 7.061 0.538574 5.09817 0.538574C3.13507 0.538574 1.53824 2.13553 1.53824 4.09863V5.29537H0.384766V12.5386H9.8113V5.29537H8.65796ZM3.01643 4.09863C3.01643 2.95066 3.95033 2.01676 5.09817 2.01676C6.246 2.01676 7.1799 2.95066 7.1799 4.09863V5.29537H3.01643V4.09863ZM5.69044 9.85277V11.4541H4.50576V9.85277C4.23021 9.66387 4.0493 9.34715 4.0493 8.98756C4.0493 8.4084 4.51887 7.93883 5.09804 7.93883C5.6772 7.93883 6.14677 8.4084 6.14677 8.98756C6.1469 9.34702 5.96599 9.66373 5.69044 9.85277Z" fill="#5D6066"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item text">
+                    Эта фотография будет прекрасно смотреться над камином. Давай сегодня же  распечатаем ее!
+                    Максимальная ширина текста — 720 пикс. А вот еще несколько полезных файлов:
+                </div>
+                <div class="item img">
+                    <div class="img-block">
+                        <div>
+                            <img src="img/img1.png" alt="">
+                            <p class="name">Image.jpg</p>
+                        </div>
+                        <div class="indicators">
+                            <div class="loader ">
+                                <svg class="circular-loader" viewBox="25 25 50 50">
+                                    <circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-dasharray="150, 200" stroke-dashoffset="-10"></circle>
+                                </svg>
+                                <svg class="circular" viewBox="25 25 50 50">
+                                    <circle cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-dasharray="150, 200"></circle>
+                                </svg>
+                                <div class="loader__icon">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.5573 0.187402C9.97542 -0.174185 9.20972 0.00311595 8.84744 0.58459L3.91144 8.51095L2.25793 6.1545C1.86469 5.5938 1.08973 5.45806 0.528644 5.85108C-0.0323252 6.2446 -0.168661 7.0179 0.225074 7.5791L2.95655 11.4718C3.18946 11.8032 3.56907 12 3.97302 12C3.98416 12 3.99584 12 4.00701 11.9995C4.4235 11.9878 4.80672 11.7685 5.02674 11.415L10.955 1.89599C11.3177 1.31387 11.1392 0.549224 10.5573 0.187402Z" fill="#5D6066"></path>
+                                    </svg>
+
+                                </div>
+                            </div>
+                            <div class="loader">
+                                <svg class="circular-loader" viewBox="25 25 50 50">
+                                    <circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-dasharray="150, 200" stroke-dashoffset="-10"></circle>
+                                </svg>
+                                <svg class="circular" viewBox="25 25 50 50">
+                                    <circle cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-dasharray="150, 200"></circle>
+                                </svg>
+                                <div class="loader__icon">
+                                    <svg width="10" height="13" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8.65796 5.29537V4.09863C8.65796 2.13553 7.061 0.538574 5.09817 0.538574C3.13507 0.538574 1.53824 2.13553 1.53824 4.09863V5.29537H0.384766V12.5386H9.8113V5.29537H8.65796ZM3.01643 4.09863C3.01643 2.95066 3.95033 2.01676 5.09817 2.01676C6.246 2.01676 7.1799 2.95066 7.1799 4.09863V5.29537H3.01643V4.09863ZM5.69044 9.85277V11.4541H4.50576V9.85277C4.23021 9.66387 4.0493 9.34715 4.0493 8.98756C4.0493 8.4084 4.51887 7.93883 5.09804 7.93883C5.6772 7.93883 6.14677 8.4084 6.14677 8.98756C6.1469 9.34702 5.96599 9.66373 5.69044 9.85277Z" fill="#5D6066"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="img-block">
+                        <div>
+                            <img src="img/img2.png" alt="">
+                            <p class="name">Image.jpg</p>
+                        </div>
+                        <div class="indicators">
+                            <div class="loader ">
+                                <svg class="circular-loader" viewBox="25 25 50 50">
+                                    <circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-dasharray="150, 200" stroke-dashoffset="-10"></circle>
+                                </svg>
+                                <svg class="circular" viewBox="25 25 50 50">
+                                    <circle cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-dasharray="150, 200"></circle>
+                                </svg>
+                                <div class="loader__icon">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.5573 0.187402C9.97542 -0.174185 9.20972 0.00311595 8.84744 0.58459L3.91144 8.51095L2.25793 6.1545C1.86469 5.5938 1.08973 5.45806 0.528644 5.85108C-0.0323252 6.2446 -0.168661 7.0179 0.225074 7.5791L2.95655 11.4718C3.18946 11.8032 3.56907 12 3.97302 12C3.98416 12 3.99584 12 4.00701 11.9995C4.4235 11.9878 4.80672 11.7685 5.02674 11.415L10.955 1.89599C11.3177 1.31387 11.1392 0.549224 10.5573 0.187402Z" fill="#5D6066"></path>
+                                    </svg>
+
+                                </div>
+                            </div>
+                            <div class="loader">
+                                <svg class="circular-loader" viewBox="25 25 50 50">
+                                    <circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-dasharray="150, 200" stroke-dashoffset="-10"></circle>
+                                </svg>
+                                <svg class="circular" viewBox="25 25 50 50">
+                                    <circle cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-dasharray="150, 200"></circle>
+                                </svg>
+                                <div class="loader__icon">
+                                    <svg width="10" height="13" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8.65796 5.29537V4.09863C8.65796 2.13553 7.061 0.538574 5.09817 0.538574C3.13507 0.538574 1.53824 2.13553 1.53824 4.09863V5.29537H0.384766V12.5386H9.8113V5.29537H8.65796ZM3.01643 4.09863C3.01643 2.95066 3.95033 2.01676 5.09817 2.01676C6.246 2.01676 7.1799 2.95066 7.1799 4.09863V5.29537H3.01643V4.09863ZM5.69044 9.85277V11.4541H4.50576V9.85277C4.23021 9.66387 4.0493 9.34715 4.0493 8.98756C4.0493 8.4084 4.51887 7.93883 5.09804 7.93883C5.6772 7.93883 6.14677 8.4084 6.14677 8.98756C6.1469 9.34702 5.96599 9.66373 5.69044 9.85277Z" fill="#5D6066"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="img-block">
+                        <div>
+                            <img src="img/img3.png" alt="">
+                            <p class="name">Image.jpg</p>
+                        </div>
+                        <div class="indicators">
+                            <div class="loader ">
+                                <svg class="circular-loader" viewBox="25 25 50 50">
+                                    <circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-dasharray="150, 200" stroke-dashoffset="-10"></circle>
+                                </svg>
+                                <svg class="circular" viewBox="25 25 50 50">
+                                    <circle cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-dasharray="150, 200"></circle>
+                                </svg>
+                                <div class="loader__icon">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.5573 0.187402C9.97542 -0.174185 9.20972 0.00311595 8.84744 0.58459L3.91144 8.51095L2.25793 6.1545C1.86469 5.5938 1.08973 5.45806 0.528644 5.85108C-0.0323252 6.2446 -0.168661 7.0179 0.225074 7.5791L2.95655 11.4718C3.18946 11.8032 3.56907 12 3.97302 12C3.98416 12 3.99584 12 4.00701 11.9995C4.4235 11.9878 4.80672 11.7685 5.02674 11.415L10.955 1.89599C11.3177 1.31387 11.1392 0.549224 10.5573 0.187402Z" fill="#5D6066"></path>
+                                    </svg>
+
+                                </div>
+                            </div>
+                            <div class="loader">
+                                <svg class="circular-loader" viewBox="25 25 50 50">
+                                    <circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-dasharray="150, 200" stroke-dashoffset="-10"></circle>
+                                </svg>
+                                <svg class="circular" viewBox="25 25 50 50">
+                                    <circle cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-dasharray="150, 200"></circle>
+                                </svg>
+                                <div class="loader__icon">
+                                    <svg width="10" height="13" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8.65796 5.29537V4.09863C8.65796 2.13553 7.061 0.538574 5.09817 0.538574C3.13507 0.538574 1.53824 2.13553 1.53824 4.09863V5.29537H0.384766V12.5386H9.8113V5.29537H8.65796ZM3.01643 4.09863C3.01643 2.95066 3.95033 2.01676 5.09817 2.01676C6.246 2.01676 7.1799 2.95066 7.1799 4.09863V5.29537H3.01643V4.09863ZM5.69044 9.85277V11.4541H4.50576V9.85277C4.23021 9.66387 4.0493 9.34715 4.0493 8.98756C4.0493 8.4084 4.51887 7.93883 5.09804 7.93883C5.6772 7.93883 6.14677 8.4084 6.14677 8.98756C6.1469 9.34702 5.96599 9.66373 5.69044 9.85277Z" fill="#5D6066"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="img-block">
+                        <div>
+                            <img src="img/img4.jpg" alt="">
+                            <p class="name">Image.jpg</p>
+                        </div>
+                        <div class="indicators">
+                            <div class="loader ">
+                                <svg class="circular-loader" viewBox="25 25 50 50">
+                                    <circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-dasharray="150, 200" stroke-dashoffset="-10"></circle>
+                                </svg>
+                                <svg class="circular" viewBox="25 25 50 50">
+                                    <circle cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-dasharray="150, 200"></circle>
+                                </svg>
+                                <div class="loader__icon">
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.5573 0.187402C9.97542 -0.174185 9.20972 0.00311595 8.84744 0.58459L3.91144 8.51095L2.25793 6.1545C1.86469 5.5938 1.08973 5.45806 0.528644 5.85108C-0.0323252 6.2446 -0.168661 7.0179 0.225074 7.5791L2.95655 11.4718C3.18946 11.8032 3.56907 12 3.97302 12C3.98416 12 3.99584 12 4.00701 11.9995C4.4235 11.9878 4.80672 11.7685 5.02674 11.415L10.955 1.89599C11.3177 1.31387 11.1392 0.549224 10.5573 0.187402Z" fill="#5D6066"></path>
+                                    </svg>
+
+                                </div>
+                            </div>
+                            <div class="loader">
+                                <svg class="circular-loader" viewBox="25 25 50 50">
+                                    <circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-dasharray="150, 200" stroke-dashoffset="-10"></circle>
+                                </svg>
+                                <svg class="circular" viewBox="25 25 50 50">
+                                    <circle cx="50" cy="50" r="20" fill="none" stroke-width="4" stroke-dasharray="150, 200"></circle>
+                                </svg>
+                                <div class="loader__icon">
+                                    <svg width="10" height="13" viewBox="0 0 10 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8.65796 5.29537V4.09863C8.65796 2.13553 7.061 0.538574 5.09817 0.538574C3.13507 0.538574 1.53824 2.13553 1.53824 4.09863V5.29537H0.384766V12.5386H9.8113V5.29537H8.65796ZM3.01643 4.09863C3.01643 2.95066 3.95033 2.01676 5.09817 2.01676C6.246 2.01676 7.1799 2.95066 7.1799 4.09863V5.29537H3.01643V4.09863ZM5.69044 9.85277V11.4541H4.50576V9.85277C4.23021 9.66387 4.0493 9.34715 4.0493 8.98756C4.0493 8.4084 4.51887 7.93883 5.09804 7.93883C5.6772 7.93883 6.14677 8.4084 6.14677 8.98756C6.1469 9.34702 5.96599 9.66373 5.69044 9.85277Z" fill="#5D6066"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
         <div class="input-block">
@@ -306,8 +575,6 @@
         </div>
 
     </div>
-
-
 
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>

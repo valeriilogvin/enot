@@ -103,7 +103,7 @@ function appendDataCircle(selector, width, stroke, strokeWidth, value)
 $('.js_input_text')
     .focus(function () {
         $(this).parent().animate({
-            height: '40%'
+            height: '250px'
         }, 200);
     })
     .blur(function () {
@@ -142,4 +142,4 @@ $('.js_theme_switcher').on('click', function () {
     } else {
         $wrapper.addClass('light');
     }
-})
+});
